@@ -22,3 +22,30 @@ variable "resource_group_name" {
     EOF
   type        = string
 }
+
+variable "azurerm_storage_account_tier" {
+  description = <<EOF
+    Defines the Tier to use for this storage account. Valid options are Standard
+    and Premium
+  EOF
+  type        = string
+  default     = "Standard"
+}
+
+variable "azurerm_storage_account_replication_type" {
+  description = <<EOF
+    Defines the type of replication to use for this storage account. Valid
+    options are LRS, GRS, RAGRS, ZRS, GZRS and RAGZRS.
+  EOF
+  type        = string
+  default     = "LRS"
+}
+
+variable "azurerm_storage_container_access_type" {
+  description = <<EOF
+    The Access Level configured for this Container. Possible values are blob,
+    container or private"
+  EOF
+  type        = string
+  default     = "private"
+}
